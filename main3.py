@@ -104,10 +104,6 @@ mlts_group_popups = mlts_data["name"].values.tolist() # popup用の駅名配列
 mlts_group_latlngs = mlts_data.iloc[:,6:8].values.tolist() # 座標の2次元配列
 
 
-for i, row in df.iterrows():
-    pop=f"{row['name']}<br>【営業時間】{row['open']}"
-
-
 # 青のマーカーをモルツの座標に差し、グループに追加
 for name, latlng in zip(mlts_group_popups, mlts_group_latlngs): 
     folium.Marker(
